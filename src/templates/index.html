@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kuliner Ngeunah - Temukan restoran ngenah and cari yang terbaik." />
+  <link rel="manifest" href="/app.webmanifest" />
+
+  <!-- Meta tags untuk Splash Screen -->
+  <meta name="theme-color" content="#D84315" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Restaurant Ngeunah Lite" />
+  <link rel="apple-touch-icon" href="/icons/icon-152x152.png" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <script src="./js/font-awesome.js"></script>
+  <title>Kuliner Ngeunah</title>
+</head>
+
+<body>
+  <skip-to-content content-id="mainContent"></skip-to-content>
+  <header class="app-bar">
+    <div class="app-bar__menu">
+      <button aria-label="klik menu" id="hamburgerButton">☰</button>
+    </div>
+    <div class="app-bar__brand">
+      <h1>My kuliner</h1>
+    </div>
+    <nav id="navigationDrawer" class="app-bar__navigation">
+      <ul>
+        <li><a href="#/home" aria-label="Home">Home</a></li>
+        <li><a href="#/favorite" aria-label="Favorite">Favorite</a></li>
+        <li>
+          <a href="https://www.dicoding.com/users/imamfauzy/academies" aria-label="About Us">About Us</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <picture>
+      <source media="(max-width: 600px)" type=".image/webp" srcset="./heros/hero-image_4-small.webp 375w">
+      <source media="(max-width: 600px)" srcset="./heros/hero-image_4-small.jpg 375w">
+      <source media="(min-width: 601px)" type=".image/webp" srcset="./heros/hero-image_4-large.webp 1200w">
+      <source media="(min-width: 601px)" srcset="./heros/hero-image_4-large.jpg 1200w">
+      <source media="(min-width: 601px)" srcset="./heros/hero-image_4.jpg 1200w">
+      <img class="jumbotron-img" src="./heros/hero-image_4-large.jpg" alt="Gambar pembuka web yang menarik" width="1200"
+        height="675">
+    </picture>
+
+    <h2 class="hero-title">Temukan Restoran Enak hanya Di My Kuliner Ngeunah</h2>
+  </section>
+  <main id="mainContent"></main>
+  <footer>
+    <p>Copyright © 2024 - Kuliner Ngeunah</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  min-width: 360px;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/*
+  AppBar
+*/
+a:focus,
+button:focus {
+  outline: 4px solid #cb0e0e; /* Memberikan outline oranye terang saat elemen mendapat fokus */
+  outline-offset: 3px; /* Jarak outline dari elemen */
+}
+
+.app-bar {
+  padding: 8px 16px;
+  background-color: #572020; /* Warna latar belakang untuk header */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  min-width: 45px;
+  min-height: 45px;
+  border: none;
+  font-size: 30px;
+  padding: 8px;
+  cursor: pointer;
+}
+.app-bar .app-bar__brand h1 {
+  color: #d1b8b8;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  user-select: none;
+}
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: #572020; /* Warna latar belakang untuk header */
+
+  overflow: hidden;
+}
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  min-height: 45px;
+  min-width: 45px;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  position: relative; /* Agar elemen di dalamnya dapat diposisikan absolut */
+  padding-top: 100px; /* Jarak dari atas layar */
+  width: 100%; /* Lebar penuh */
+  height: 350px; /* Tinggi tetap */
+  display: flex;
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: flex-end; /* Posisikan konten di bagian bawah hero */
+  padding-bottom: 50px; /* Jarak dari bagian bawah layar */
+  overflow: hidden; /* Menghindari gambar melampaui batas hero */
+}
+
+/* Gambar dalam hero */
+.jumbotron-img {
+  width: 100%; /* Lebar penuh */
+  height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
+  position: absolute; /* Posisi absolut untuk menutupi hero */
+  top: 0; /* Posisikan di atas */
+  left: 0; /* Posisikan di kiri */
+  object-fit: cover; /* Menutupi seluruh area hero */
+  z-index: -1; /* Pastikan gambar berada di belakang konten */
+}
+
+/* Hero Title */
+.hero-title {
+  position: relative; /* Posisi relatif di dalam hero */
+  bottom: 0; /* Teks berada di bagian bawah hero */
+  width: 100%; /* Lebar penuh */
+  font-size: 1.5em; /* Ukuran teks besar */
+  color: white; /* Warna teks putih */
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 70%); /* Tambahkan bayangan untuk teks */
+  margin: 0; /* Hilangkan margin default */
+  padding: 20px; /* Padding di sekitar teks */
+  background: rgba(250, 182, 182, 0.5); /* Background semi-transparan */
+  border-radius: 0 0 10px 10px; /* Membulatkan sudut bawah */
+  text-align: center; /* Pusatkan teks */
+}
+
+/* Hero Title */
+.hero-title {
+  position: absolute; /* Posisi absolut di dalam hero */
+  bottom: 0; /* Teks berada di bagian bawah hero */
+  width: 100%; /* Lebar penuh */
+  font-size: 1.5em; /* Ukuran teks besar */
+  color: white; /* Warna teks putih */
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 70%); /* Tambahkan bayangan untuk teks */
+  margin: 0; /* Hilangkan margin default */
+  padding: 20px; /* Padding di sekitar teks */
+  background: rgb(0 0 0 / 50%); /* Background semi-transparan */
+  border-radius: 0 0 10px 10px; /* Membulatkan sudut bawah */
+  text-align: center; /* Pusatkan teks */
+}
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+footer {
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaaaaa;
+}
+footer p a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+/*
+  restaurant Item
+*/
+.restaurants {
+  display: grid; /* Menggunakan grid layout untuk menata kartu restoran */
+  grid-template-columns: repeat(1fr);
+  gap: 16px;
+  margin: 32px 0;
+  gap: 20px;
+}
+.restaurant-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: justify;
+
+  /* Efek 3D dengan bayangan */
+  box-shadow:
+    0 10px 20px rgb(0 0 0 / 20%),
+    0 6px 6px rgb(0 0 0 / 10%); /* Tambahkan bayangan lembut */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease; /* Transisi saat hover */
+  opacity: 0; /* Dimulai dengan opacity 0 */
+  transform: scale(0.8); /* Dimulai dengan ukuran lebih kecil */
+  animation: fadeInScaleUp 0.8s ease forwards; /* Efek animasi masuk dan membesar */
+}
+/* Animasi fade-in dan scale-up */
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8); /* Ukuran kecil di awal */
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Ukuran kembali normal */
+  }
+}
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__poster {
+  width: 100%;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.restaurant-item
+  .restaurant-item__header
+  .restaurant-item__header__rating
+  .restaurant-item__header__rating__score {
+  margin-left: 10px;
+}
+
+.restaurant-item .restaurant-item__content {
+  padding: 16px;
+}
+
+.restaurant-item .restaurant-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.restaurant-item .restaurant-item__content h3 a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+.restaurant-item .restaurant-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/*
+  restaurant
+*/
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+.restaurant-item__content h3 a {
+  display: inline-block;
+  min-width: 45px;
+  min-height: 45px;
+  line-height: 1.2; /* Menjaga teks tetap terlihat dengan baik di dalam ukuran minimum */
+  text-decoration: none; /* Menghapus garis bawah pada teks */
+  color: inherit; /* Menjaga warna teks sesuai dengan warna elemen induk */
+}
+
+.restaurant .restaurant__poster {
+  width: 100%;
+  max-width: 600px;
+}
+
+.restaurant__overview {
+  text-align: justify;
+}
+
+.restaurant .restaurant__info h4 {
+  margin: 8px 0;
+}
+
+/*
+  restaurant
+*/
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant .restaurant__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.restaurant .restaurant__info h4 {
+  margin: 8px 0;
+}
+
+
+footer #footerTools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+footer p {
+  margin-top: 16px;
+
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+/*
+  Button
+*/
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #db0000;
+  border: 1px solid #770000;
+  border-radius: 4px;
+
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #db0000bb;
+}
+.btn:active {
+  background-color: #db0000dd;
+}
+.btn:focus-visible {
+  outline: 3px solid #db000055;
+}
+
+#query {
+  width: 100%; /* Mengatur lebar input agar responsif */
+  max-width: 300px; /* Maksimal lebar input */
+  padding: 10px; /* Ruang di dalam input */
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border: 2px solid #513c1460; /* Warna border */
+  border-radius: 10px; /* Membuat sudut input melengkung */
+  font-size: 14px; /* Ukuran font */
+  color: #333; /* Warna teks */
+  background-color: #f9f9f9; /* Warna latar belakang */
+  transition: border-color 0.3s ease; /* Transisi untuk border */
+  min-width: 50px;
+  min-height: 50px;
+}
+
+#query:focus {
+  border-color: #2980b9; /* Warna border saat fokus */
+  outline: none; /* Menghilangkan outline default */
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5); /* Bayangan saat fokus */
+}
+
+#query::placeholder {
+  color: #aaa; /* Warna placeholder */
+  font-style: italic; /* Gaya font placeholder */
+}
+.content__heading {
+  text-align: center; /* Memusatkan teks */
+  font-weight: bold; /* Mengatur gaya font menjadi tebal */
+  font-size: 2em; /* Mengatur ukuran font */
+  font-family: 'Arial', sans-serif; /* Mengatur jenis font */
+  color: #333; /* Mengatur warna teks */
+  margin: 20px 0; /* Menambahkan margin atas dan bawah */
+  text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+}
